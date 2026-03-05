@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    environment {
+        // Defines the target Kubernetes namespace to backup
+        NAMESPACE = 'default'
+        DOCKER_IMAGE = 'k8s-backup-manager:latest'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout source code from GitHub
+                checkout scm
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image containing kubectl and the backup scripts
+                    docker.build("${DOCKER_IMAGE}", "-f infrastructure/docker/Dockerfile .")
+                }
+            }
+        }
+
+        stage('Backup K8s Resources') {
+            steps {
+                script {
+                    // Run the backup script inside the Docker container
+                    // Mount the host's ~/.kube directory so kubectl can authenticate
+                    docker.image("${DOCKER_IMAGE}").inside('-v $HOME/.kube:/root/.kube -v /var/run/docker.sock:/var/run/docker.sock') {
+                        sh "./backup.sh ${NAMESPACE}"
+                    }
+                }
+            }
+        }
+
+        stage('Archive Backup Artifacts') {
+            steps {
+                // Archive the generated YAML files in Jenkins so they can be downloaded for restoration
+                archiveArtifacts artifacts: 'backups/**/*.yaml', allowEmptyArchive: false
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Backup completed successfully!"
+        }
+        failure {
+            echo "Backup failed. Please check the logs."
+        }
+    }
+}

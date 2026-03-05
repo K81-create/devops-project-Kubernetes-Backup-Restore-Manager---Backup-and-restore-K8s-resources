@@ -1,0 +1,17 @@
+# Kubernetes config
+.kube/
+
+# Backup directories
+backups/
+
+# IDE/OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Logs
+*.log
+
+# Temp files
+tmp/

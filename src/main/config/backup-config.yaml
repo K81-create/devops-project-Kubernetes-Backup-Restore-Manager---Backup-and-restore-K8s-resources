@@ -1,0 +1,11 @@
+backup:
+  retention_days: 7
+  target_namespaces:
+    - default
+    - devops-test
+  include_resources:
+    - deployments
+    - services
+    - configmaps
+    - secrets
+    - ingress
