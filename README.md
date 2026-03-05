@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kubernetes Backup & Restore Manager
 
 This project provides an automated system to backup and restore Kubernetes resources (Deployments, Services, ConfigMaps, Secrets, etc.) using Bash scripts, Docker, and Jenkins.
@@ -54,3 +55,6 @@ chmod +x src/main/scripts/restore.sh
 3. If testing locally, you can copy the contents of `Jenkinsfile` into the "Pipeline script" block directly.
 4. Ensure Jenkins has permissions to run Docker and access the `~/.kube/config` for authentication.
 5. Click **Build Now** to trigger an automated backup. Artifacts (YAML files) will be securely archived in Jenkins.
+=======
+# devops-project-Kubernetes-Backup-Restore-Manager---Backup-and-restore-K8s-resources
+>>>>>>> 45b9c64ebdf9f0f03f858bc154889751b966a428
