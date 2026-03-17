@@ -56,5 +56,4 @@ chmod +x src/main/scripts/restore.sh
 4. Ensure Jenkins has permissions to run Docker and access the `~/.kube/config` for authentication.
 5. Click **Build Now** to trigger an automated backup. Artifacts (YAML files) will be securely archived in Jenkins.
 =======
-# devops-project-Kubernetes-Backup-Restore-Manager---Backup-and-restore-K8s-resources
->>>>>>> 45b9c64ebdf9f0f03f858bc154889751b966a428
+
