@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Kubernetes Backup & Restore Manager
 
 This project provides an automated system to backup and restore Kubernetes resources (Deployments, Services, ConfigMaps, Secrets, etc.) using Bash scripts, Docker, and Jenkins.
