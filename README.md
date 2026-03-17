@@ -1,9 +1,9 @@
 Kubernetes Backup & Restore Manager – DevOps Project
 
 Student Name: Khushi Singhal
-Registration No: [Your Registration Number]
-Course: CSE3253 DevOps [PE6]
-Semester: VI (2025–2026)
+Registration No: 23FE10CSE00682
+Course: CSE3253 DevOps 
+Semester: VI 
 Project Type: Kubernetes Automation + CI/CD
 Difficulty: Intermediate
 
