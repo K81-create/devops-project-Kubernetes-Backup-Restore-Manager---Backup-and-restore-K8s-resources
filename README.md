@@ -1,7 +1,7 @@
 # Kubernetes Backup & Restore Manager – DevOps Project
 
 **Student Name:** Khushi Singhal  
-**Registration No:** [Your Registration Number]  
+**Registration No:** 23FE10CSE00682 
 **Course:** CSE3253 DevOps [PE6]  
 **Semester:** VI (2025–2026)  
 **Project Type:** Kubernetes Automation + CI/CD  
@@ -84,3 +84,9 @@ This project integrates **automated Kubernetes backups into a DevOps workflow**,
 
 ```bash
 minikube start
+
+** Verify cluster**
+
+```bash
+kubectl get nodes
+
