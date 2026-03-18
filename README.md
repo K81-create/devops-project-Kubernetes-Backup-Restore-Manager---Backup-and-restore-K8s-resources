@@ -85,8 +85,16 @@ This project integrates **automated Kubernetes backups into a DevOps workflow**,
 ```bash
 minikube start
 
-** Verify cluster**
+
+**Verify Cluster**
 
 ```bash
 kubectl get nodes
+
+**Future Improvements**
+
+- Automated scheduled backups
+- Cloud storage integration (AWS S3 / GCP) 
+- Backup encryption
+  
 
