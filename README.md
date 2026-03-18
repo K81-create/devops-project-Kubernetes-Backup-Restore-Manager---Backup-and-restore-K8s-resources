@@ -85,11 +85,13 @@ This project integrates **automated Kubernetes backups into a DevOps workflow**,
 ```bash
 minikube start
 
-
+---
 **Verify Cluster**
 
 ```bash
 kubectl get nodes
+
+---
 
 **Future Improvements**
 
