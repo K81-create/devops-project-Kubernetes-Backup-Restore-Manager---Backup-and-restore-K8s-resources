@@ -84,6 +84,51 @@ This project integrates **automated Kubernetes backups into a DevOps workflow**,
 
 ```bash
 minikube start
+```
+
+**Then Verify**
+```bash
+kubectl get nodes
+```
+
+**Go to Your Project Folder**
+```bash
+cd "C:\Users\khushi\OneDrive\Desktop\DevOps project"
+```
+
+**Deploy the Test Application**
+```bash
+kubectl create namespace devops-test
+kubectl apply -f test-app/nginx.yaml -n devops-test
+```
+**Then verify**
+```bash
+kubectl get all -n devops-test
+```
+
+**Run Backup**
+```bash
+kubectl get all -n devops-test -o yaml > backup.yaml
+```
+
+**Simulate Failure**
+```bash
+kubectl delete namespace devops-test
+```
+**Restore From Backup**
+```bash
+kubectl create namespace devops-test
+```
+
+**Restore resources**
+```bash
+kubectl apply -f backup.yaml -n devops-test
+```
+**Verify Restore**
+```bash
+kubectl get all -n devops-test
+```
+
 
 
   
